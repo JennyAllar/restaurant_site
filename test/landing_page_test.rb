@@ -28,7 +28,6 @@ describe "Landing page" do
   it "displays a list of names for 5 dishes" do
     dishes = page.all('html body main ul li')
     dishes.length.must_equal 5
-
     dishes.each do |element|
       element.text.wont_equal ''
     end
@@ -40,7 +39,6 @@ describe "Landing page" do
   end
 
   it "displays a contact us email link in the footer" do
-    skip
     mailto_link = page.find('html body footer a[href^=mailto]')
     mailto_link.text.wont_equal ''
   end
